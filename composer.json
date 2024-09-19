@@ -3,7 +3,7 @@
     "description": "A simple PHP library",
     "autoload": {
         "psr-4": {
-            "YGZLib": "src/"
+            "YGZLib\\": "src/"
         }
     },
     "authors": [
