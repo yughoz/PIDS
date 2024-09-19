@@ -1,12 +1,12 @@
 <?php
 namespace YGZLib;
 
-class YGZLib
+class PidGenerator
 {
     public static function generate($code = "DEF")
     {
         $prefix = $code;
-        $currentDateTime = now();
+        $currentDateTime = new \DateTime();
         $formattedDate = $currentDateTime->format('Ymd');
         $microtimeParts = explode(' ', microtime());
         $milliseconds = ((int)$microtimeParts[1]) * 1000 + ((int)round($microtimeParts[0] * 1000));
