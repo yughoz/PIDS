@@ -1,0 +1,17 @@
+{
+    "name": "yughoz/pids",
+    "description": "A simple PHP library",
+    "autoload": {
+        "psr-4": {
+            "Yughoz\\Pids\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Yughoz",
+            "email": "aeelsevendfold@gmail.com"
+        }
+    ],
+    "type": "library",
+    "require": {}
+}
