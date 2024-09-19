@@ -1,6 +1,7 @@
 {
     "name": "yughoz/pids",
-    "description": "A simple PHP library",
+    "description": "PID Generator Library",
+    "type": "library",
     "autoload": {
         "psr-4": {
             "YGZLib\\": "src/"
@@ -12,6 +13,5 @@
             "email": "aeelsevendfold@gmail.com"
         }
     ],
-    "type": "library",
-    "require": {}
+    "require": {},
 }
