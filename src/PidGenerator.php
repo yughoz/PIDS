@@ -23,7 +23,7 @@ class PidGenerator
         }
 
         // Generate a unique prefix, such as a unique ID
-        $number = rand(0,5);
+        $number = rand(0,15);
         $base36 = base_convert($number, 10, 36);
         $uniquePrefix = strtoupper($base36);
 
