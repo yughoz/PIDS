@@ -15,25 +15,40 @@ class PidGenerator
         return $pid;
     }
 
-    public static function idTime($timestamp = null) 
+    public static function idTime($prefix = 2,$timestamp = null) 
     {
-        // Use current time if no timestamp is provided
         if ($timestamp === null) {
             $timestamp = time();
         }
 
-        // Generate a unique prefix, such as a unique ID
-        $number = rand(0,15);
-        $base36 = base_convert($number, 10, 36);
-        $uniquePrefix = strtoupper($base36);
+        if ($prefix) {
+                
+            $microtime = microtime(true);
+
+            // Split the float into seconds and microseconds
+            $microtimeParts = explode('.', $microtime);
+            $microseconds = isset($microtimeParts[1]) ? $microtimeParts[1] : '000000';  // Handle missing microseconds
+
+
+            // Extract the first 2 digits of the microseconds
+            if ($prefix === true) {
+                $prefix = 2;
+            }
+            $first_two_digits = substr($microseconds, 0, $prefix);
+
+            $timestamp = $timestamp.$first_two_digits;
+        }
+
 
         // Convert timestamp to base 36
         $shortId = base_convert($timestamp, 10, 36);
         $shortId = strtoupper($shortId);
 
         // Concatenate unique prefix with the shortened ID
-        $id = $uniquePrefix . $shortId;
+        // $id = $uniquePrefix . $shortId;
+        $id =  $shortId;
 
         return $id;
     }
+
 }
